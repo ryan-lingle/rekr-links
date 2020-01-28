@@ -1,18 +1,28 @@
 module.exports = {
-  development: {
-    dialect: "sqlite",
-    storage: "./db.development.sqlite"
+  "development": {
+    "username": null,
+    "password": null,
+    "database": "rekr_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
-  test: {
-    dialect: "sqlite",
-    storage: ":memory:"
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "rekr_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
-  production: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOSTNAME,
-    dialect: 'mysql',
-    use_env_variable: 'DATABASE_URL'
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "protocol": "postgres"
+  },
+  "staging": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "protocol": "postgres"
   }
-};
+}
